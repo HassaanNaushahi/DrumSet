@@ -4,13 +4,14 @@ function handleClick(){
   var buttonInnerHTML = this.innerHTML;
   makeSound(buttonInnerHTML);
   addAnimation(buttonInnerHTML);
+  //PressKey(buttonInnerHTML);
 }
 
-$.keydown(handleKeyPress);
+$(".drum").keydown(handleKeyPress);
 
-function handleKeyPress(){
-  makeSound(event.key);
-  addAnimation(event.key);
+function handleKeyPress(press){
+  makeSound(press.key);
+  addAnimation(press.key);
 }
 
 function addAnimation(button)
