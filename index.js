@@ -1,6 +1,4 @@
-for(var i  = 0; i < (document.querySelectorAll(".drum")).length; i++) {
-  document.querySelectorAll(".drum")[i].addEventListener("click", handleClick);
-}
+$(".drum").click(handleClick);
 
 function handleClick(){
   var buttonInnerHTML = this.innerHTML;
@@ -8,7 +6,7 @@ function handleClick(){
   addAnimation(buttonInnerHTML);
 }
 
-document.addEventListener("keydown", handleKeyPress);
+$.keydown(handleKeyPress);
 
 function handleKeyPress(){
   makeSound(event.key);
@@ -17,10 +15,10 @@ function handleKeyPress(){
 
 function addAnimation(button)
 {
-  var activeButton = document.querySelector("." + button);
-  activeButton.classList.add("pressed");
+  var activeButton = $("." + button);
+  activeButton.addClass("pressed");
   setTimeout(function(){
-  activeButton.classList.remove("pressed");
+  activeButton.removeClass("pressed");
   }, 100);
 }
 
